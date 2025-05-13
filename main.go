@@ -9,6 +9,6 @@ func main() {
 	pilha := stack.New()
 	pilha.Push(50)
 	pilha.Push(100)
-	//pilha.Pop()
+	pilha.Pop()
 	fmt.Println(pilha)
 }
