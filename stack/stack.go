@@ -1,14 +1,18 @@
-package main
+package stack
 
-type stack struct {
+type Stack struct {
 	head int
 	data [10]int
+}
+
+func New() Stack {
+	return Stack{head: 0}
 }
 
 // Em Go é definido o receptor da função antes do nome da função
 // como por exemplo nesta função, o receptor seria (s *stack)
 // Exemplo real: <nome da stack>.push(valor inteiro)
-func (s *stack) push(valor int) {
+func (s *Stack) Push(valor int) {
 	if s.head >= len(s.data) {
 		return
 	}
@@ -16,7 +20,7 @@ func (s *stack) push(valor int) {
 	s.head++
 }
 
-func (s *stack) pop() (valorRetirado int) {
+func (s *Stack) Pop() (valorRetirado int) {
 	if s.head == 0 {
 		return 0
 	}
